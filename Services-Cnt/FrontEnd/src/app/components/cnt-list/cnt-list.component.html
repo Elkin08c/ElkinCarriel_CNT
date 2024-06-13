@@ -1,0 +1,23 @@
+<h1>Cnt List</h1>
+<nz-table #basicTable [nzData]="cnts" [nzBordered]="true" [nzSize]="'middle'">
+  <thead>
+    <tr>
+      <th nzWidth="10%">Cnt Name</th>
+      <th nzWidth="50%">Description</th>
+      <th nzWidth="30%">Price</th>
+      <th nzWidth="10%">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cnt of basicTable.data">
+      <td>{{ cnt.name }}</td>
+      <td>{{ cnt.description }}</td>
+      <td>{{ cnt.price }}</td>
+      <td>
+        <button nz-button nzType="default" nzDanger (click)="deleteCnt(cnt.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

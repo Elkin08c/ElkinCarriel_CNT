@@ -1,0 +1,41 @@
+<h1>Cnt</h1>
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitFormCnt()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Name</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="name" placeholder="PuntoNet" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Description</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input
+        nz-input
+        formControlName="description"
+        placeholder="50Gb of internet data"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Price</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <nz-input-number formControlName="price" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control
+      [nzXs]="{ span: 24, offset: 0 }"
+      [nzSm]="{ span: 16, offset: 8 }"
+    >
+      <button nz-button nzType="primary" class="submit_btn" type="submit">
+        Submit
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<app-cnt-list (selectedCnt)="editCnt($event)"></app-cnt-list>
